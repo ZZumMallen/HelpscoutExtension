@@ -9,7 +9,7 @@
   },
   "permissions": ["storage", "activeTab", "tabs"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "service-worker.js"
   },
   "content_scripts": [
     {
