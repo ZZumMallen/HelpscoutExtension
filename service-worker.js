@@ -2,11 +2,17 @@
 // install (service worker event)
 // chrome.runtime.onInstalled (extension event)
 // activate (service worker event)
+// noinspection JSDeprecatedSymbols
+
+
+
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.data === "testbutton clicked") {
+  if (message.data === "TEST_BUTTON_ID clicked") {
     sendMessageToActiveTab(sendResponse);
+
     return true;
+
   }
 });
 

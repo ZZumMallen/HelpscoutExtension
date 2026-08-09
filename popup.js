@@ -1,13 +1,13 @@
 //console.log("Debug: Hello from the checkbox");
 
-const testbutton = document.getElementById("test-button");
+const TEST_BUTTON_ID = document.getElementById("test-button");
 
-if (testbutton) {
-	testbutton.addEventListener("click", () => {
+if (TEST_BUTTON_ID) {
+	TEST_BUTTON_ID.addEventListener("click", () => {
 		//console.log("Debug: Pop sending 'capture'");
 
-		chrome.runtime.sendMessage({ data: "testbutton clicked" }, (response) => {
+		chrome.runtime.sendMessage({data: "TEST_BUTTON_ID clicked"}, (response) => {
 			console.log(response);
-		});
+		})
 	});
 }
