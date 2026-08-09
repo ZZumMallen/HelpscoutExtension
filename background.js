@@ -10,15 +10,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
-async function sendMessageToActiveTab(message) {
+async function sendMessageToActiveTab(sendResponse) {
   try {
 
     const [tab] = await chrome.tabs.query({active: true,lastFocusedWindow: true});
-    const response = await chrome.tabs.SendMessage(tab.id, message,(response) => { });
+    const response = await chrome.tabs.sendMessage(tab.id, {data: "change"});
+    sendResponse(response);
 
   } catch (error) {
-
-    
+    console.error("Failed to message active tab:", error);
+    sendResponse({ error: error.message });
   }
 
   
