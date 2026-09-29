@@ -2,7 +2,6 @@
 (function () {
     'use strict';
 
-    // Placeholder selector: replace with the real Helpscout sidebar selector.
     const RULES = {
         purpleHeader: {
             host: 'mytalkdesk.com',
@@ -10,7 +9,13 @@
         },
         hsSidebar: {
             host: 'helpscout.net',
-            css: `.REPLACE_ME_SIDEBAR_SELECTOR { width: 0px !important; }`,
+            css: `#hs-app > div > div > aside {
+                --sidebar-width: 0px !important;
+                --sidebar-label-width: 0px !important;
+                width: 0 !important;
+                min-width: 0 !important;
+                overflow: hidden !important;
+            }`,
         },
     };
 
