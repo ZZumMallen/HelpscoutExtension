@@ -1,16 +1,20 @@
-console.log("content script");
+
+(function() {
+    'use strict';
+
+    const style = document.createElement('style');
+    style.textContent = `
+        .title-bar-module__container {
+            background-color: #431283 !important;
+        }
+    `;
+    document.documentElement.appendChild(style);
+})();
 
 
-//#5405bd
-
-//.title-bar-module__container {
-
-// .title-bar-module__container {
-//     background-color: #5405bd;
-//     height: env(titlebar-area-height, 40px);
-// }
-
-const badColor = document.querySelector(".title-bar-module__container")
-
-
+function setSidebarWidth(width = "0px") {
+  const aside = document.querySelector("#hs-app > div > div > aside");
+  if (!aside) return console.warn("Sidebar element not found");
+  aside.style.setProperty("--sidebar-width", width);
+}
 

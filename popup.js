@@ -1,5 +1,3 @@
-//console.log("Debug: Hello from the checkbox");
-
 const resetPurpleButton = document.querySelector("#reset-purple");
 
 if(resetPurpleButton) {
