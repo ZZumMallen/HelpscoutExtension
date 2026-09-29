@@ -1,4 +1,4 @@
-
+// https://rainbowtreecare.mytalkdesk.com/* script
 (function() {
     'use strict';
 
@@ -12,9 +12,5 @@
 })();
 
 
-function setSidebarWidth(width = "0px") {
-  const aside = document.querySelector("#hs-app > div > div > aside");
-  if (!aside) return console.warn("Sidebar element not found");
-  aside.style.setProperty("--sidebar-width", width);
-}
+
 

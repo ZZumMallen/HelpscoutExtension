@@ -7,10 +7,22 @@
 		<title>CSR Tools</title>
 	</head>
 	<body>
-		<div class="container-fluid">			
+		<div class="container-fluid">		
+			<!-- if true, the talkdesk header should change the purple header. 
+			If false it should do nothing. Whenever 'checked' changes
+			store true/false in local storag -->
 			<h1>Talkdesk</h1>
-			<button id="reset-purple">Better Purple</button>			
-			<input class="switch" type="checkbox" checked="true">
+			<label for="header">Purple Header</label>
+			<input class="switch" type="checkbox" checked="true" value="header">
+
+
+ 			<h1>Helpscout</h1>
+			<label for="sidebar">Sidebar</label>
+			<input class="switch" id="hs-sidebar" type="checkbox" checked="true" value="sidebar">
+			<!-- if true, the helpscout sidebar width should change to 0px. 
+			If false it should do nothing. Whenever 'checked' changes
+			store true/false in local storag-->	
+
 		</div>
 		<script src="popup.js"></script>
 	</body>

@@ -4,7 +4,9 @@ chrome.runtime.onInstalled.addListener(() => {})
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if(message.data === "resetPurple"){
     sendResponse({success: true, data: "resetPurple message received"})
-
+    
+    // tell the content script to change the purple color
+    // 
   }
 });
 
