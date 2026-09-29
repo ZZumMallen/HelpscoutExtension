@@ -9,12 +9,14 @@
         },
         hsSidebar: {
             host: 'helpscout.net',
-            css: `#hs-app > div > div > aside {
+            css: `#hs-app aside[aria-label="Customer Sidebar"] {
                 --sidebar-width: 0px !important;
                 --sidebar-label-width: 0px !important;
                 width: 0 !important;
                 min-width: 0 !important;
                 overflow: hidden !important;
+                padding: 0 !important;
+                border: 0 !important;
             }`,
         },
     };
