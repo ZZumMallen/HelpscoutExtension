@@ -1,16 +1,12 @@
-chrome.runtime.onStartup.addListener(() => {})
-chrome.runtime.onInstalled.addListener(() => {})
-
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if(message.data === "resetPurple"){
-    sendResponse({success: true, data: "resetPurple message received"})
-    
-    // tell the content script to change the purple color
-    // 
-  }
+importScripts("settings.js");
+// Seed defaults on install without overwriting anything already saved.
+// Settings flow: popup.js -> chrome.storage.local -> content.js (storage.onChanged).
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.storage.local.get(null, (existing) => {
+    const missing = {};
+    for (const [key, value] of Object.entries(DEFAULT_SETTINGS)) {
+      if (!(key in existing)) missing[key] = value;
+    }
+    if (Object.keys(missing).length) chrome.storage.local.set(missing);
+  });
 });
-
-chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-  var activeTab = tabs[0];
-  console.log(activeTab);
-})

@@ -7,23 +7,19 @@
 		<title>CSR Tools</title>
 	</head>
 	<body>
-		<div class="container-fluid">		
-			<!-- if true, the talkdesk header should change the purple header. 
-			If false it should do nothing. Whenever 'checked' changes
-			store true/false in local storag -->
+		<div class="container-fluid">
+			<!-- Each switch's data-setting is the key saved in chrome.storage.local.
+			To add a setting: add a switch here, a default in settings.js,
+			and a rule in content.js. -->
 			<h1>Talkdesk</h1>
-			<label for="header">Purple Header</label>
-			<input class="switch" type="checkbox" checked="true" value="header">
+			<label for="purple-header">Purple Header</label>
+			<input class="switch" id="purple-header" type="checkbox" data-setting="purpleHeader">
 
-
- 			<h1>Helpscout</h1>
-			<label for="sidebar">Sidebar</label>
-			<input class="switch" id="hs-sidebar" type="checkbox" checked="true" value="sidebar">
-			<!-- if true, the helpscout sidebar width should change to 0px. 
-			If false it should do nothing. Whenever 'checked' changes
-			store true/false in local storag-->	
-
+			<h1>Helpscout</h1>
+			<label for="hs-sidebar">Hide Sidebar</label>
+			<input class="switch" id="hs-sidebar" type="checkbox" data-setting="hsSidebar">
 		</div>
+		<script src="settings.js"></script>
 		<script src="popup.js"></script>
 	</body>
 </html>

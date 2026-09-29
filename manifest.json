@@ -17,7 +17,7 @@
         "https://rainbowtreecare.mytalkdesk.com/*", 
         "https://secure.helpscout.net/inboxes/*"
       ],
-      "js": ["content.js"]
+      "js": ["settings.js", "content.js"]
     }
   ]
 }
